@@ -1,11 +1,13 @@
 def printInfo():
-	print("DFA Sample 1 - by x86coder")
-	print(" > Input your string to be recognized:")
+	print("DFA1 - by x86coder")
+	print("Regular language to be recognized: a*b")
+	print("(zero or more a's followed by one b)")
+	print(" > Input your string/word: ", end="")
 	
-Q = [0, 1, 2]		# Finite set of states (Q)
+Q = [0, 1, 2, 3]	# Finite set of states (Q)
 S = ['a', 'b']		# Input alphabet (sigma)
 s = 0				# Initial state
-d = [[1,2], [1,2], [1,2]]	# Delta function f(x).
+d = [[1,2], [1,2], [3, 3], [3, 3]]	# Delta function f(x) (multidimensional array)
 					# 	values = [[state0], [state1], [state2], [[index for 'a', index for 'b']] ... [state N]]
 F = [2]				# Set of acception states (python list object)
 
@@ -39,4 +41,4 @@ while k < len(F):
 if accepted:
 	print("> String is accepted!")
 else:
-	print("> String was not accepted!")
+	print("> String was not accepted (X)!")
